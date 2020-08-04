@@ -23,6 +23,9 @@
 \DeclareOption{noeqref}{\gdef\changdefsnoeqref{1}}
 \DeclareOption{nolege}{\gdef\changdefsnolege{1}}
 \DeclareOption{alldisp}{\gdef\changdefsalldisp{1}}
+
+\DeclareOption{chang}{\gdef\changdefschang{1}}
+\DeclareOption{main}{\gdef\changdefsmain{1}}
 \ProcessOptions\relax
 
 % Fonts for Latin and Greek Letters
@@ -969,12 +972,14 @@
 \RequirePackage{amsthm}
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
-\newtheorem{definition}[theorem]{Definition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
 \newtheorem*{note}{Note}
 
 \newtheorem{innercustomthm}{Theorem}
@@ -984,6 +989,21 @@
 {\endinnercustomthm}
 \fi
 
+\ifdefined\changdefschang
+  \RequirePackage{color}
+  \newcommand{\chang}[1]{{\color{blue}{[\bf\sf Chang: #1]}}}
+\fi
+\ifdefined\changdefsmain
+  \RequirePackage[
+    backref=section,
+    colorlinks=true,
+    citecolor=blue,
+    linkcolor=blue,
+    anchorcolor=red,
+    unicode=true,
+    urlcolor=blue
+  ]{hyperref}
+\fi
 
 % Global Behaviors
 \ifdefined\changdefsnoautonum\else
@@ -1012,11 +1032,13 @@
 
 % Common functions / distributions
 \newcommand{\KL}{\mathrm{KL}}
+\newcommand{\JS}{\mathrm{JS}}
 \newcommand{\vMF}{\mathrm{vMF}}
 \newcommand{\Cat}{\mathrm{Cat}}
 \newcommand{\Dir}{\mathrm{Dir}}
 \newcommand{\Bern}{\mathrm{Bern}}
 \newcommand{\Mult}{\mathrm{Mult}}
+\newcommand{\Unif}{\mathrm{Unif}}
 
 % Common Symbols
 \newcommand{\ud}{\mathrm{d}} % for differentiation
