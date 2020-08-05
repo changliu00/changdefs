@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{changdefs}[2019/12/27, v2.0. Chang Liu's own macros. <liuchangsmail@gmail.com>]
+\ProvidesPackage{changdefs}[2020/08/05, v2.0. Chang Liu's own macros. <liuchangsmail@gmail.com>]
 
 \RequirePackage{amsmath, amsfonts, amssymb}
 
@@ -25,7 +25,7 @@
 \DeclareOption{alldisp}{\gdef\changdefsalldisp{1}}
 
 \DeclareOption{chang}{\gdef\changdefschang{1}}
-\DeclareOption{main}{\gdef\changdefsmain{1}}
+\DeclareOption{hyperref}{\gdef\changdefshyperref{1}}
 \ProcessOptions\relax
 
 % Fonts for Latin and Greek Letters
@@ -993,16 +993,19 @@
   \RequirePackage{color}
   \newcommand{\chang}[1]{{\color{blue}{[\bf\sf Chang: #1]}}}
 \fi
-\ifdefined\changdefsmain
+\ifdefined\changdefshyperref
   \RequirePackage[
+    unicode=true,
     backref=section,
     colorlinks=true,
-    citecolor=blue,
     linkcolor=blue,
-    anchorcolor=red,
-    unicode=true,
-    urlcolor=blue
+    citecolor=green,
+    filecolor=cyan,
+    menucolor=red,
+    urlcolor=magenta,
+    anchorcolor=red
   ]{hyperref}
+  \AtBeginDocument{\let\textlabel\label} % trouble-shoots labels in align
 \fi
 
 % Global Behaviors
