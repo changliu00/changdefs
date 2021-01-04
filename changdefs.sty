@@ -19,6 +19,7 @@
 \DeclareOption{nodecorators}{\gdef\changdefsnodecorators{1}}
 
 \DeclareOption{notheorems}{\gdef\changdefsnotheorems{1}}
+\DeclareOption{nocompactproof}{\gdef\changdefsnocompactproof{1}}
 \DeclareOption{noautonum}{\gdef\changdefsnoautonum{1}}
 \DeclareOption{noeqref}{\gdef\changdefsnoeqref{1}}
 \DeclareOption{nolege}{\gdef\changdefsnolege{1}}
@@ -1039,6 +1040,24 @@
 \newtheorem{postulate}[theorem]{Postulate}
 \newtheorem{principle}[theorem]{Principle}
 \newtheorem*{note}{Note}
+\fi
+
+\ifdefined\changdefsnocompactproof\else
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  % \vspace{-\topsep}% remove the space after the theorem
+  \pushQED{\qed}%
+  \normalfont
+  \topsep0pt \partopsep0pt % no space before
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+  \addvspace{4pt plus 2pt} % some space after
+}
+\makeatother
 \fi
 
 \ifdefined\changdefschang
