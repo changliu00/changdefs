@@ -1906,8 +1906,13 @@
 \newcommand{\tabincell}[2]{\begin{tabular}{@{} #1 @{}} #2 \end{tabular}}
 \newcommand{\e}[1]{\times 10^{#1}}
 \newcommand*{\rfrac}[2]{{}^{#1}\!/_{\!#2}}
-\newcommand{\frpar}[1]{\frac{\partial}{\partial #1}}
-\newcommand{\frparn}[2]{\frac{\partial^{#1}}{{\partial #2}^{#1}}}
+\newcommand{\fracpartial}[2][]{%
+  \def\temp{#1} \ifx\temp\empty
+  \frac{\partial}{\partial #2}
+  \else
+  \frac{\partial^{#1}}{{\partial #2}^{#1}}
+  \fi
+}
 
 % Common functions / distributions
 \newcommand{\KL}{\mathrm{KL}}
