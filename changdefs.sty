@@ -1906,11 +1906,20 @@
 \newcommand{\tabincell}[2]{\begin{tabular}{@{} #1 @{}} #2 \end{tabular}}
 \newcommand{\e}[1]{\times 10^{#1}}
 \newcommand*{\rfrac}[2]{{}^{#1}\!/_{\!#2}}
-\newcommand{\fracpartial}[2][]{%
+% \RequirePackage{xparse}
+% \NewDocumentCommand{\fracpartial}{O{}mm}{%
+\newcommand{\fracpartial}[3][]{%
   \def\temp{#1} \ifx\temp\empty
-  \frac{\partial}{\partial #2}
+  \frac{\partial #2}{\partial #3}
   \else
-  \frac{\partial^{#1}}{{\partial #2}^{#1}}
+  \frac{\partial^{#1} #2}{{\partial #3}^{#1}}
+  \fi
+}
+\newcommand{\fracdiff}[3][]{%
+  \def\temp{#1} \ifx\temp\empty
+  \frac{\ud #2}{\ud #3}
+  \else
+  \frac{\ud^{#1} #2}{{\ud #3}^{#1}}
   \fi
 }
 
