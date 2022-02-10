@@ -51,7 +51,7 @@
 \AtBeginDocument{
   \newgeometry{
     textheight=9.4in,
-    textwidth=6.6in,
+    textwidth=6.8in,
     top=0.72in,
     headheight=12pt,
     headsep=25pt,
@@ -147,10 +147,11 @@
 }
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
+\setlength{\parskip}{3pt}
 
+% See <https://ftp.jaist.ac.jp/pub/CTAN/macros/latex/contrib/enumitem/enumitem.pdf>, Fig. 1.
 \RequirePackage[shortlabels]{enumitem}
-\setlist{leftmargin=16pt, topsep=0pt, itemsep=2pt, partopsep=1pt, parsep=4pt}
+\setlist{leftmargin=16pt, topsep=0pt, itemsep=0pt, partopsep=1pt, parsep=3pt}
 
 \RequirePackage{mathtools} % for env dcases (``d'' for ``display'')
 \allowdisplaybreaks[2]
