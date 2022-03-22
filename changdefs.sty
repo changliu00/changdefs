@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{changdefs}[2020/08/05, v2.0. Chang Liu's own macros. <liuchangsmail@gmail.com>]
+\ProvidesPackage{changdefs}[2022/03/23, v2.0. Chang Liu's own macros. <liuchangsmail@gmail.com>]
 
 \RequirePackage{amsmath, amsfonts, amssymb}
 
@@ -43,8 +43,8 @@
 \ifdefined\changdefshyperref\else\gdef\changdefshyperref{1}\fi
 
 % fonts
-\renewcommand{\rmdefault}{ptm}
-\renewcommand{\sfdefault}{phv}
+% \renewcommand{\rmdefault}{ptm}
+% \renewcommand{\sfdefault}{phv}
 
 % set page geometry
 \RequirePackage[verbose=true,letterpaper]{geometry}
@@ -909,73 +909,74 @@
 \newcommand{\sfieit}{\mathsfit{8}}
 \newcommand{\sfinin}{\mathsfit{9}}
 
-% sans-serif italic, bm (from ICLR template 'math_commands.tex')
-\newcommand{\sfibA}{\bm{\mathsfit{A}}}
-\newcommand{\sfibB}{\bm{\mathsfit{B}}}
-\newcommand{\sfibC}{\bm{\mathsfit{C}}}
-\newcommand{\sfibD}{\bm{\mathsfit{D}}}
-\newcommand{\sfibE}{\bm{\mathsfit{E}}}
-\newcommand{\sfibF}{\bm{\mathsfit{F}}}
-\newcommand{\sfibG}{\bm{\mathsfit{G}}}
-\newcommand{\sfibH}{\bm{\mathsfit{H}}}
-\newcommand{\sfibI}{\bm{\mathsfit{I}}}
-\newcommand{\sfibJ}{\bm{\mathsfit{J}}}
-\newcommand{\sfibK}{\bm{\mathsfit{K}}}
-\newcommand{\sfibL}{\bm{\mathsfit{L}}}
-\newcommand{\sfibM}{\bm{\mathsfit{M}}}
-\newcommand{\sfibN}{\bm{\mathsfit{N}}}
-\newcommand{\sfibO}{\bm{\mathsfit{O}}}
-\newcommand{\sfibP}{\bm{\mathsfit{P}}}
-\newcommand{\sfibQ}{\bm{\mathsfit{Q}}}
-\newcommand{\sfibR}{\bm{\mathsfit{R}}}
-\newcommand{\sfibS}{\bm{\mathsfit{S}}}
-\newcommand{\sfibT}{\bm{\mathsfit{T}}}
-\newcommand{\sfibU}{\bm{\mathsfit{U}}}
-\newcommand{\sfibV}{\bm{\mathsfit{V}}}
-\newcommand{\sfibW}{\bm{\mathsfit{W}}}
-\newcommand{\sfibX}{\bm{\mathsfit{X}}}
-\newcommand{\sfibY}{\bm{\mathsfit{Y}}}
-\newcommand{\sfibZ}{\bm{\mathsfit{Z}}}
-
-\newcommand{\sfibaa}{\bm{\mathsfit{a}}}
-\newcommand{\sfibbb}{\bm{\mathsfit{b}}}
-\newcommand{\sfibcc}{\bm{\mathsfit{c}}}
-\newcommand{\sfibdd}{\bm{\mathsfit{d}}}
-\newcommand{\sfibee}{\bm{\mathsfit{e}}}
-\newcommand{\sfibff}{\bm{\mathsfit{f}}}
-\newcommand{\sfibgg}{\bm{\mathsfit{g}}}
-\newcommand{\sfibhh}{\bm{\mathsfit{h}}}
-\newcommand{\sfibii}{\bm{\mathsfit{i}}}
-\newcommand{\sfibjj}{\bm{\mathsfit{j}}}
-\newcommand{\sfibkk}{\bm{\mathsfit{k}}}
-\newcommand{\sfibll}{\bm{\mathsfit{l}}}
-\newcommand{\sfibmm}{\bm{\mathsfit{m}}}
-\newcommand{\sfibnn}{\bm{\mathsfit{n}}}
-\newcommand{\sfiboo}{\bm{\mathsfit{o}}}
-\newcommand{\sfibpp}{\bm{\mathsfit{p}}}
-\newcommand{\sfibqq}{\bm{\mathsfit{q}}}
-\newcommand{\sfibrr}{\bm{\mathsfit{r}}}
-\newcommand{\sfibss}{\bm{\mathsfit{s}}}
-\newcommand{\sfibtt}{\bm{\mathsfit{t}}}
-\newcommand{\sfibuu}{\bm{\mathsfit{u}}}
-\newcommand{\sfibvv}{\bm{\mathsfit{v}}}
-\newcommand{\sfibww}{\bm{\mathsfit{w}}}
-\newcommand{\sfibxx}{\bm{\mathsfit{x}}}
-\newcommand{\sfibyy}{\bm{\mathsfit{y}}}
-\newcommand{\sfibzz}{\bm{\mathsfit{z}}}
-
-%%% trivial fonts for lower Greeks and partial/nabla; no valid fonts for capital Greeks
-
-\newcommand{\sfibzro}{\bm{\mathsfit{0}}}
-\newcommand{\sfibone}{\bm{\mathsfit{1}}}
-\newcommand{\sfibtwo}{\bm{\mathsfit{2}}}
-\newcommand{\sfibthr}{\bm{\mathsfit{3}}}
-\newcommand{\sfibfor}{\bm{\mathsfit{4}}}
-\newcommand{\sfibfiv}{\bm{\mathsfit{5}}}
-\newcommand{\sfibsix}{\bm{\mathsfit{6}}}
-\newcommand{\sfibsev}{\bm{\mathsfit{7}}}
-\newcommand{\sfibeit}{\bm{\mathsfit{8}}}
-\newcommand{\sfibnin}{\bm{\mathsfit{9}}}
+% sans-serif italic, bm
+% $\bm{\mathsfit{A}}$ produce the same thing as $\bm{\mathsf{A}}$.
+%\newcommand{\sfibA}{\bm{\mathsfit{A}}}
+%\newcommand{\sfibB}{\bm{\mathsfit{B}}}
+%\newcommand{\sfibC}{\bm{\mathsfit{C}}}
+%\newcommand{\sfibD}{\bm{\mathsfit{D}}}
+%\newcommand{\sfibE}{\bm{\mathsfit{E}}}
+%\newcommand{\sfibF}{\bm{\mathsfit{F}}}
+%\newcommand{\sfibG}{\bm{\mathsfit{G}}}
+%\newcommand{\sfibH}{\bm{\mathsfit{H}}}
+%\newcommand{\sfibI}{\bm{\mathsfit{I}}}
+%\newcommand{\sfibJ}{\bm{\mathsfit{J}}}
+%\newcommand{\sfibK}{\bm{\mathsfit{K}}}
+%\newcommand{\sfibL}{\bm{\mathsfit{L}}}
+%\newcommand{\sfibM}{\bm{\mathsfit{M}}}
+%\newcommand{\sfibN}{\bm{\mathsfit{N}}}
+%\newcommand{\sfibO}{\bm{\mathsfit{O}}}
+%\newcommand{\sfibP}{\bm{\mathsfit{P}}}
+%\newcommand{\sfibQ}{\bm{\mathsfit{Q}}}
+%\newcommand{\sfibR}{\bm{\mathsfit{R}}}
+%\newcommand{\sfibS}{\bm{\mathsfit{S}}}
+%\newcommand{\sfibT}{\bm{\mathsfit{T}}}
+%\newcommand{\sfibU}{\bm{\mathsfit{U}}}
+%\newcommand{\sfibV}{\bm{\mathsfit{V}}}
+%\newcommand{\sfibW}{\bm{\mathsfit{W}}}
+%\newcommand{\sfibX}{\bm{\mathsfit{X}}}
+%\newcommand{\sfibY}{\bm{\mathsfit{Y}}}
+%\newcommand{\sfibZ}{\bm{\mathsfit{Z}}}
+%
+%\newcommand{\sfibaa}{\bm{\mathsfit{a}}}
+%\newcommand{\sfibbb}{\bm{\mathsfit{b}}}
+%\newcommand{\sfibcc}{\bm{\mathsfit{c}}}
+%\newcommand{\sfibdd}{\bm{\mathsfit{d}}}
+%\newcommand{\sfibee}{\bm{\mathsfit{e}}}
+%\newcommand{\sfibff}{\bm{\mathsfit{f}}}
+%\newcommand{\sfibgg}{\bm{\mathsfit{g}}}
+%\newcommand{\sfibhh}{\bm{\mathsfit{h}}}
+%\newcommand{\sfibii}{\bm{\mathsfit{i}}}
+%\newcommand{\sfibjj}{\bm{\mathsfit{j}}}
+%\newcommand{\sfibkk}{\bm{\mathsfit{k}}}
+%\newcommand{\sfibll}{\bm{\mathsfit{l}}}
+%\newcommand{\sfibmm}{\bm{\mathsfit{m}}}
+%\newcommand{\sfibnn}{\bm{\mathsfit{n}}}
+%\newcommand{\sfiboo}{\bm{\mathsfit{o}}}
+%\newcommand{\sfibpp}{\bm{\mathsfit{p}}}
+%\newcommand{\sfibqq}{\bm{\mathsfit{q}}}
+%\newcommand{\sfibrr}{\bm{\mathsfit{r}}}
+%\newcommand{\sfibss}{\bm{\mathsfit{s}}}
+%\newcommand{\sfibtt}{\bm{\mathsfit{t}}}
+%\newcommand{\sfibuu}{\bm{\mathsfit{u}}}
+%\newcommand{\sfibvv}{\bm{\mathsfit{v}}}
+%\newcommand{\sfibww}{\bm{\mathsfit{w}}}
+%\newcommand{\sfibxx}{\bm{\mathsfit{x}}}
+%\newcommand{\sfibyy}{\bm{\mathsfit{y}}}
+%\newcommand{\sfibzz}{\bm{\mathsfit{z}}}
+%
+%%%% trivial fonts for lower Greeks and partial/nabla; no valid fonts for capital Greeks
+%
+%\newcommand{\sfibzro}{\bm{\mathsfit{0}}}
+%\newcommand{\sfibone}{\bm{\mathsfit{1}}}
+%\newcommand{\sfibtwo}{\bm{\mathsfit{2}}}
+%\newcommand{\sfibthr}{\bm{\mathsfit{3}}}
+%\newcommand{\sfibfor}{\bm{\mathsfit{4}}}
+%\newcommand{\sfibfiv}{\bm{\mathsfit{5}}}
+%\newcommand{\sfibsix}{\bm{\mathsfit{6}}}
+%\newcommand{\sfibsev}{\bm{\mathsfit{7}}}
+%\newcommand{\sfibeit}{\bm{\mathsfit{8}}}
+%\newcommand{\sfibnin}{\bm{\mathsfit{9}}}
 \fi
 
 
