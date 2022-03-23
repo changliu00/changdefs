@@ -161,8 +161,23 @@
 
 % Fonts for Latin and Greek Letters
 % See also this link <https://tex.stackexchange.com/questions/58098/what-are-all-the-font-styles-i-can-use-in-math-mode>
+
+%% aliases
 \newcommand{\eps}{\epsilon}
 \newcommand{\veps}{\varepsilon}
+
+%% italic capital Greek letters
+\newcommand{\itGamma}{\mathit{\Gamma}}
+\newcommand{\itDelta}{\mathit{\Delta}}
+\newcommand{\itTheta}{\mathit{\Theta}}
+\newcommand{\itLambda}{\mathit{\Lambda}}
+\newcommand{\itXi}{\mathit{\Xi}}
+\newcommand{\itPi}{\mathit{\Pi}}
+\newcommand{\itSigma}{\mathit{\Sigma}}
+\newcommand{\itUpsilon}{\mathit{\Upsilon}}
+\newcommand{\itPhi}{\mathit{\Phi}}
+\newcommand{\itPsi}{\mathit{\Psi}}
+\newcommand{\itOmega}{\mathit{\Omega}}
 
 %% textnormal
 \ifdefined\changdefsnotextnormal\else
@@ -548,6 +563,18 @@
 \newcommand{\bmPsi}{\bm{\Psi}}
 \newcommand{\bmOmega}{\bm{\Omega}}
 
+\newcommand{\biGamma}{\bm{\mathit{\Gamma}}}
+\newcommand{\biDelta}{\bm{\mathit{\Delta}}}
+\newcommand{\biTheta}{\bm{\mathit{\Theta}}}
+\newcommand{\biLambda}{\bm{\mathit{\Lambda}}}
+\newcommand{\biXi}{\bm{\mathit{\Xi}}}
+\newcommand{\biPi}{\bm{\mathit{\Pi}}}
+\newcommand{\biSigma}{\bm{\mathit{\Sigma}}}
+\newcommand{\biUpsilon}{\bm{\mathit{\Upsilon}}}
+\newcommand{\biPhi}{\bm{\mathit{\Phi}}}
+\newcommand{\biPsi}{\bm{\mathit{\Psi}}}
+\newcommand{\biOmega}{\bm{\mathit{\Omega}}}
+
 \newcommand{\bmalpha}{\bm{\alpha}}
 \newcommand{\bmbeta}{\bm{\beta}}
 \newcommand{\bmgamma}{\bm{\gamma}}
@@ -911,72 +938,72 @@
 
 % sans-serif italic, bm
 % $\bm{\mathsfit{A}}$ produce the same thing as $\bm{\mathsf{A}}$.
-%\newcommand{\sfibA}{\bm{\mathsfit{A}}}
-%\newcommand{\sfibB}{\bm{\mathsfit{B}}}
-%\newcommand{\sfibC}{\bm{\mathsfit{C}}}
-%\newcommand{\sfibD}{\bm{\mathsfit{D}}}
-%\newcommand{\sfibE}{\bm{\mathsfit{E}}}
-%\newcommand{\sfibF}{\bm{\mathsfit{F}}}
-%\newcommand{\sfibG}{\bm{\mathsfit{G}}}
-%\newcommand{\sfibH}{\bm{\mathsfit{H}}}
-%\newcommand{\sfibI}{\bm{\mathsfit{I}}}
-%\newcommand{\sfibJ}{\bm{\mathsfit{J}}}
-%\newcommand{\sfibK}{\bm{\mathsfit{K}}}
-%\newcommand{\sfibL}{\bm{\mathsfit{L}}}
-%\newcommand{\sfibM}{\bm{\mathsfit{M}}}
-%\newcommand{\sfibN}{\bm{\mathsfit{N}}}
-%\newcommand{\sfibO}{\bm{\mathsfit{O}}}
-%\newcommand{\sfibP}{\bm{\mathsfit{P}}}
-%\newcommand{\sfibQ}{\bm{\mathsfit{Q}}}
-%\newcommand{\sfibR}{\bm{\mathsfit{R}}}
-%\newcommand{\sfibS}{\bm{\mathsfit{S}}}
-%\newcommand{\sfibT}{\bm{\mathsfit{T}}}
-%\newcommand{\sfibU}{\bm{\mathsfit{U}}}
-%\newcommand{\sfibV}{\bm{\mathsfit{V}}}
-%\newcommand{\sfibW}{\bm{\mathsfit{W}}}
-%\newcommand{\sfibX}{\bm{\mathsfit{X}}}
-%\newcommand{\sfibY}{\bm{\mathsfit{Y}}}
-%\newcommand{\sfibZ}{\bm{\mathsfit{Z}}}
+%\newcommand{\sfbiA}{\bm{\mathsfit{A}}}
+%\newcommand{\sfbiB}{\bm{\mathsfit{B}}}
+%\newcommand{\sfbiC}{\bm{\mathsfit{C}}}
+%\newcommand{\sfbiD}{\bm{\mathsfit{D}}}
+%\newcommand{\sfbiE}{\bm{\mathsfit{E}}}
+%\newcommand{\sfbiF}{\bm{\mathsfit{F}}}
+%\newcommand{\sfbiG}{\bm{\mathsfit{G}}}
+%\newcommand{\sfbiH}{\bm{\mathsfit{H}}}
+%\newcommand{\sfbiI}{\bm{\mathsfit{I}}}
+%\newcommand{\sfbiJ}{\bm{\mathsfit{J}}}
+%\newcommand{\sfbiK}{\bm{\mathsfit{K}}}
+%\newcommand{\sfbiL}{\bm{\mathsfit{L}}}
+%\newcommand{\sfbiM}{\bm{\mathsfit{M}}}
+%\newcommand{\sfbiN}{\bm{\mathsfit{N}}}
+%\newcommand{\sfbiO}{\bm{\mathsfit{O}}}
+%\newcommand{\sfbiP}{\bm{\mathsfit{P}}}
+%\newcommand{\sfbiQ}{\bm{\mathsfit{Q}}}
+%\newcommand{\sfbiR}{\bm{\mathsfit{R}}}
+%\newcommand{\sfbiS}{\bm{\mathsfit{S}}}
+%\newcommand{\sfbiT}{\bm{\mathsfit{T}}}
+%\newcommand{\sfbiU}{\bm{\mathsfit{U}}}
+%\newcommand{\sfbiV}{\bm{\mathsfit{V}}}
+%\newcommand{\sfbiW}{\bm{\mathsfit{W}}}
+%\newcommand{\sfbiX}{\bm{\mathsfit{X}}}
+%\newcommand{\sfbiY}{\bm{\mathsfit{Y}}}
+%\newcommand{\sfbiZ}{\bm{\mathsfit{Z}}}
 %
-%\newcommand{\sfibaa}{\bm{\mathsfit{a}}}
-%\newcommand{\sfibbb}{\bm{\mathsfit{b}}}
-%\newcommand{\sfibcc}{\bm{\mathsfit{c}}}
-%\newcommand{\sfibdd}{\bm{\mathsfit{d}}}
-%\newcommand{\sfibee}{\bm{\mathsfit{e}}}
-%\newcommand{\sfibff}{\bm{\mathsfit{f}}}
-%\newcommand{\sfibgg}{\bm{\mathsfit{g}}}
-%\newcommand{\sfibhh}{\bm{\mathsfit{h}}}
-%\newcommand{\sfibii}{\bm{\mathsfit{i}}}
-%\newcommand{\sfibjj}{\bm{\mathsfit{j}}}
-%\newcommand{\sfibkk}{\bm{\mathsfit{k}}}
-%\newcommand{\sfibll}{\bm{\mathsfit{l}}}
-%\newcommand{\sfibmm}{\bm{\mathsfit{m}}}
-%\newcommand{\sfibnn}{\bm{\mathsfit{n}}}
-%\newcommand{\sfiboo}{\bm{\mathsfit{o}}}
-%\newcommand{\sfibpp}{\bm{\mathsfit{p}}}
-%\newcommand{\sfibqq}{\bm{\mathsfit{q}}}
-%\newcommand{\sfibrr}{\bm{\mathsfit{r}}}
-%\newcommand{\sfibss}{\bm{\mathsfit{s}}}
-%\newcommand{\sfibtt}{\bm{\mathsfit{t}}}
-%\newcommand{\sfibuu}{\bm{\mathsfit{u}}}
-%\newcommand{\sfibvv}{\bm{\mathsfit{v}}}
-%\newcommand{\sfibww}{\bm{\mathsfit{w}}}
-%\newcommand{\sfibxx}{\bm{\mathsfit{x}}}
-%\newcommand{\sfibyy}{\bm{\mathsfit{y}}}
-%\newcommand{\sfibzz}{\bm{\mathsfit{z}}}
+%\newcommand{\sfbiaa}{\bm{\mathsfit{a}}}
+%\newcommand{\sfbibb}{\bm{\mathsfit{b}}}
+%\newcommand{\sfbicc}{\bm{\mathsfit{c}}}
+%\newcommand{\sfbidd}{\bm{\mathsfit{d}}}
+%\newcommand{\sfbiee}{\bm{\mathsfit{e}}}
+%\newcommand{\sfbiff}{\bm{\mathsfit{f}}}
+%\newcommand{\sfbigg}{\bm{\mathsfit{g}}}
+%\newcommand{\sfbihh}{\bm{\mathsfit{h}}}
+%\newcommand{\sfbiii}{\bm{\mathsfit{i}}}
+%\newcommand{\sfbijj}{\bm{\mathsfit{j}}}
+%\newcommand{\sfbikk}{\bm{\mathsfit{k}}}
+%\newcommand{\sfbill}{\bm{\mathsfit{l}}}
+%\newcommand{\sfbimm}{\bm{\mathsfit{m}}}
+%\newcommand{\sfbinn}{\bm{\mathsfit{n}}}
+%\newcommand{\sfbioo}{\bm{\mathsfit{o}}}
+%\newcommand{\sfbipp}{\bm{\mathsfit{p}}}
+%\newcommand{\sfbiqq}{\bm{\mathsfit{q}}}
+%\newcommand{\sfbirr}{\bm{\mathsfit{r}}}
+%\newcommand{\sfbiss}{\bm{\mathsfit{s}}}
+%\newcommand{\sfbitt}{\bm{\mathsfit{t}}}
+%\newcommand{\sfbiuu}{\bm{\mathsfit{u}}}
+%\newcommand{\sfbivv}{\bm{\mathsfit{v}}}
+%\newcommand{\sfbiww}{\bm{\mathsfit{w}}}
+%\newcommand{\sfbixx}{\bm{\mathsfit{x}}}
+%\newcommand{\sfbiyy}{\bm{\mathsfit{y}}}
+%\newcommand{\sfbizz}{\bm{\mathsfit{z}}}
 %
 %%%% trivial fonts for lower Greeks and partial/nabla; no valid fonts for capital Greeks
 %
-%\newcommand{\sfibzro}{\bm{\mathsfit{0}}}
-%\newcommand{\sfibone}{\bm{\mathsfit{1}}}
-%\newcommand{\sfibtwo}{\bm{\mathsfit{2}}}
-%\newcommand{\sfibthr}{\bm{\mathsfit{3}}}
-%\newcommand{\sfibfor}{\bm{\mathsfit{4}}}
-%\newcommand{\sfibfiv}{\bm{\mathsfit{5}}}
-%\newcommand{\sfibsix}{\bm{\mathsfit{6}}}
-%\newcommand{\sfibsev}{\bm{\mathsfit{7}}}
-%\newcommand{\sfibeit}{\bm{\mathsfit{8}}}
-%\newcommand{\sfibnin}{\bm{\mathsfit{9}}}
+%\newcommand{\sfbizro}{\bm{\mathsfit{0}}}
+%\newcommand{\sfbione}{\bm{\mathsfit{1}}}
+%\newcommand{\sfbitwo}{\bm{\mathsfit{2}}}
+%\newcommand{\sfbithr}{\bm{\mathsfit{3}}}
+%\newcommand{\sfbifor}{\bm{\mathsfit{4}}}
+%\newcommand{\sfbifiv}{\bm{\mathsfit{5}}}
+%\newcommand{\sfbisix}{\bm{\mathsfit{6}}}
+%\newcommand{\sfbisev}{\bm{\mathsfit{7}}}
+%\newcommand{\sfbieit}{\bm{\mathsfit{8}}}
+%\newcommand{\sfbinin}{\bm{\mathsfit{9}}}
 \fi
 
 
@@ -1049,6 +1076,19 @@
 \newcommand{\Phib}{\bar{\Phi}}
 \newcommand{\Psib}{\bar{\Psi}}
 \newcommand{\Omegab}{\bar{\Omega}}
+
+%%% \bar{\mathit{\Gamma}} places the bar to the left
+\newcommand{\itGammab}{\mathit{\bar{\Gamma}}}
+\newcommand{\itDeltab}{\mathit{\bar{\Delta}}}
+\newcommand{\itThetab}{\mathit{\bar{\Theta}}}
+\newcommand{\itLambdab}{\mathit{\bar{\Lambda}}}
+\newcommand{\itXib}{\mathit{\bar{\Xi}}}
+\newcommand{\itPib}{\mathit{\bar{\Pi}}}
+\newcommand{\itSigmab}{\mathit{\bar{\Sigma}}}
+\newcommand{\itUpsilonb}{\mathit{\bar{\Upsilon}}}
+\newcommand{\itPhib}{\mathit{\bar{\Phi}}}
+\newcommand{\itPsib}{\mathit{\bar{\Psi}}}
+\newcommand{\itOmegab}{\mathit{\bar{\Omega}}}
 
 \newcommand{\alphab}{\bar{\alpha}}
 \newcommand{\betab}{\bar{\beta}}
@@ -1165,6 +1205,19 @@
 \newcommand{\Psid}{\dot{\Psi}}
 \newcommand{\Omegad}{\dot{\Omega}}
 
+%%% \dot{\mathit{\Gamma}} places the dot to the left
+\newcommand{\itGammad}{\mathit{\dot{\Gamma}}}
+\newcommand{\itDeltad}{\mathit{\dot{\Delta}}}
+\newcommand{\itThetad}{\mathit{\dot{\Theta}}}
+\newcommand{\itLambdad}{\mathit{\dot{\Lambda}}}
+\newcommand{\itXid}{\mathit{\dot{\Xi}}}
+\newcommand{\itPid}{\mathit{\dot{\Pi}}}
+\newcommand{\itSigmad}{\mathit{\dot{\Sigma}}}
+\newcommand{\itUpsilond}{\mathit{\dot{\Upsilon}}}
+\newcommand{\itPhid}{\mathit{\dot{\Phi}}}
+\newcommand{\itPsid}{\mathit{\dot{\Psi}}}
+\newcommand{\itOmegad}{\mathit{\dot{\Omega}}}
+
 \newcommand{\alphad}{\dot{\alpha}}
 \newcommand{\betad}{\dot{\beta}}
 \newcommand{\gammad}{\dot{\gamma}}
@@ -1279,6 +1332,19 @@
 \newcommand{\Phih}{\hat{\Phi}}
 \newcommand{\Psih}{\hat{\Psi}}
 \newcommand{\Omegah}{\hat{\Omega}}
+
+%%% \hat{\mathit{\Gamma}} places the hat to the left
+\newcommand{\itGammah}{\mathit{\hat{\Gamma}}}
+\newcommand{\itDeltah}{\mathit{\hat{\Delta}}}
+\newcommand{\itThetah}{\mathit{\hat{\Theta}}}
+\newcommand{\itLambdah}{\mathit{\hat{\Lambda}}}
+\newcommand{\itXih}{\mathit{\hat{\Xi}}}
+\newcommand{\itPih}{\mathit{\hat{\Pi}}}
+\newcommand{\itSigmah}{\mathit{\hat{\Sigma}}}
+\newcommand{\itUpsilonh}{\mathit{\hat{\Upsilon}}}
+\newcommand{\itPhih}{\mathit{\hat{\Phi}}}
+\newcommand{\itPsih}{\mathit{\hat{\Psi}}}
+\newcommand{\itOmegah}{\mathit{\hat{\Omega}}}
 
 \newcommand{\alphah}{\hat{\alpha}}
 \newcommand{\betah}{\hat{\beta}}
@@ -1395,6 +1461,19 @@
 \newcommand{\Psit}{\tilde{\Psi}}
 \newcommand{\Omegat}{\tilde{\Omega}}
 
+%%% \tilde{\mathit{\Gamma}} places the tilde to the left
+\newcommand{\itGammat}{\mathit{\tilde{\Gamma}}}
+\newcommand{\itDeltat}{\mathit{\tilde{\Delta}}}
+\newcommand{\itThetat}{\mathit{\tilde{\Theta}}}
+\newcommand{\itLambdat}{\mathit{\tilde{\Lambda}}}
+\newcommand{\itXit}{\mathit{\tilde{\Xi}}}
+\newcommand{\itPit}{\mathit{\tilde{\Pi}}}
+\newcommand{\itSigmat}{\mathit{\tilde{\Sigma}}}
+\newcommand{\itUpsilont}{\mathit{\tilde{\Upsilon}}}
+\newcommand{\itPhit}{\mathit{\tilde{\Phi}}}
+\newcommand{\itPsit}{\mathit{\tilde{\Psi}}}
+\newcommand{\itOmegat}{\mathit{\tilde{\Omega}}}
+
 \newcommand{\alphat}{\tilde{\alpha}}
 \newcommand{\betat}{\tilde{\beta}}
 \newcommand{\gammat}{\tilde{\gamma}}
@@ -1509,6 +1588,19 @@
 \newcommand{\Phiv}{\vec{\Phi}}
 \newcommand{\Psiv}{\vec{\Psi}}
 \newcommand{\Omegav}{\vec{\Omega}}
+
+%%% \mathit{\vec{\Gamma}} produces a tilde-like symbol
+\newcommand{\itGammav}{\vec{\mathit{\Gamma}}}
+\newcommand{\itDeltav}{\vec{\mathit{\Delta}}}
+\newcommand{\itThetav}{\vec{\mathit{\Theta}}}
+\newcommand{\itLambdav}{\vec{\mathit{\Lambda}}}
+\newcommand{\itXiv}{\vec{\mathit{\Xi}}}
+\newcommand{\itPiv}{\vec{\mathit{\Pi}}}
+\newcommand{\itSigmav}{\vec{\mathit{\Sigma}}}
+\newcommand{\itUpsilonv}{\vec{\mathit{\Upsilon}}}
+\newcommand{\itPhiv}{\vec{\mathit{\Phi}}}
+\newcommand{\itPsiv}{\vec{\mathit{\Psi}}}
+\newcommand{\itOmegav}{\vec{\mathit{\Omega}}}
 
 \newcommand{\alphav}{\vec{\alpha}}
 \newcommand{\betav}{\vec{\beta}}
