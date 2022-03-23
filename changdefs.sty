@@ -13,6 +13,7 @@
 \DeclareOption{nomathbf}{\gdef\changdefsnomathbf{1}}
 \DeclareOption{nomathsf}{\gdef\changdefsnomathsf{1}}
 \DeclareOption{nomathsfit}{\gdef\changdefsnomathsfit{1}}
+\DeclareOption{noupgreek}{\gdef\changdefsnoupgreek{1}}
 
 \DeclareOption{nobar}{\gdef\changdefsnobar{1}}
 \DeclareOption{nodot}{\gdef\changdefsnodot{1}}
@@ -305,7 +306,87 @@
 \newcommand{\rmyy}{\mathrm{y}}
 \newcommand{\rmzz}{\mathrm{z}}
 
-%%% trivial fonts for Greeks, numbers and partial/nabla
+%%% trivial fonts for Greeks by default
+\newcommand{\rmGamma}{\mathrm{\Gamma}}
+\newcommand{\rmDelta}{\mathrm{\Delta}}
+\newcommand{\rmTheta}{\mathrm{\Theta}}
+\newcommand{\rmLambda}{\mathrm{\Lambda}}
+\newcommand{\rmXi}{\mathrm{\Xi}}
+\newcommand{\rmPi}{\mathrm{\Pi}}
+\newcommand{\rmSigma}{\mathrm{\Sigma}}
+\newcommand{\rmUpsilon}{\mathrm{\Upsilon}}
+\newcommand{\rmPhi}{\mathrm{\Phi}}
+\newcommand{\rmPsi}{\mathrm{\Psi}}
+\newcommand{\rmOmega}{\mathrm{\Omega}}
+
+\ifdefined\changdefsnoupgreek
+\newcommand{\rmalpha}{\mathrm{\alpha}}
+\newcommand{\rmbeta}{\mathrm{\beta}}
+\newcommand{\rmgamma}{\mathrm{\gamma}}
+\newcommand{\rmdelta}{\mathrm{\delta}}
+\newcommand{\rmepsilon}{\mathrm{\epsilon}}
+\newcommand{\rmeps}{\mathrm{\epsilon}}
+\newcommand{\rmvarepsilon}{\mathrm{\varepsilon}}
+\newcommand{\rmveps}{\mathrm{\varepsilon}}
+\newcommand{\rmzeta}{\mathrm{\zeta}}
+\newcommand{\rmeta}{\mathrm{\eta}}
+\newcommand{\rmtheta}{\mathrm{\theta}}
+\newcommand{\rmvartheta}{\mathrm{\vartheta}}
+\newcommand{\rmiota}{\mathrm{\iota}}
+\newcommand{\rmkappa}{\mathrm{\kappa}}
+\newcommand{\rmlambda}{\mathrm{\lambda}}
+\newcommand{\rmmu}{\mathrm{\mu}}
+\newcommand{\rmnu}{\mathrm{\nu}}
+\newcommand{\rmxi}{\mathrm{\xi}}
+\newcommand{\rmpi}{\mathrm{\pi}}
+\newcommand{\rmvarpi}{\mathrm{\varpi}}
+\newcommand{\rmrho}{\mathrm{\rho}}
+\newcommand{\rmvarrho}{\mathrm{\varrho}}
+\newcommand{\rmsigma}{\mathrm{\sigma}}
+\newcommand{\rmvarsigma}{\mathrm{\varsigma}}
+\newcommand{\rmtau}{\mathrm{\tau}}
+\newcommand{\rmupsilon}{\mathrm{\upsilon}}
+\newcommand{\rmphi}{\mathrm{\phi}}
+\newcommand{\rmvarphi}{\mathrm{\varphi}}
+\newcommand{\rmchi}{\mathrm{\chi}}
+\newcommand{\rmpsi}{\mathrm{\psi}}
+\newcommand{\rmomega}{\mathrm{\omega}}
+\else
+\RequirePackage{upgreek}
+\newcommand{\rmalpha}{\upalpha}
+\newcommand{\rmbeta}{\upbeta}
+\newcommand{\rmgamma}{\upgamma}
+\newcommand{\rmdelta}{\updelta}
+\newcommand{\rmepsilon}{\upepsilon}
+\newcommand{\rmeps}{\upepsilon}
+\newcommand{\rmvarepsilon}{\upvarepsilon}
+\newcommand{\rmveps}{\upvarepsilon}
+\newcommand{\rmzeta}{\upzeta}
+\newcommand{\rmeta}{\upeta}
+\newcommand{\rmtheta}{\uptheta}
+\newcommand{\rmvartheta}{\upvartheta}
+\newcommand{\rmiota}{\upiota}
+\newcommand{\rmkappa}{\upkappa}
+\newcommand{\rmlambda}{\uplambda}
+\newcommand{\rmmu}{\upmu}
+\newcommand{\rmnu}{\upnu}
+\newcommand{\rmxi}{\upxi}
+\newcommand{\rmpi}{\uppi}
+\newcommand{\rmvarpi}{\upvarpi}
+\newcommand{\rmrho}{\uprho}
+\newcommand{\rmvarrho}{\upvarrho}
+\newcommand{\rmsigma}{\upsigma}
+\newcommand{\rmvarsigma}{\upvarsigma}
+\newcommand{\rmtau}{\uptau}
+\newcommand{\rmupsilon}{\upupsilon}
+\newcommand{\rmphi}{\upphi}
+\newcommand{\rmvarphi}{\upvarphi}
+\newcommand{\rmchi}{\upchi}
+\newcommand{\rmpsi}{\uppsi}
+\newcommand{\rmomega}{\upomega}
+\fi
+
+%%% trivial fonts for numbers and partial/nabla
 \fi
 
 %% math calligraphy (mathcal)
@@ -678,7 +759,6 @@
 \newcommand{\bfyy}{\mathbf{y}}
 \newcommand{\bfzz}{\mathbf{z}}
 
-%%% trivial fonts for lower Greeks
 \newcommand{\bfGamma}{\mathbf{\Gamma}}
 \newcommand{\bfDelta}{\mathbf{\Delta}}
 \newcommand{\bfTheta}{\mathbf{\Theta}}
@@ -690,6 +770,75 @@
 \newcommand{\bfPhi}{\mathbf{\Phi}}
 \newcommand{\bfPsi}{\mathbf{\Psi}}
 \newcommand{\bfOmega}{\mathbf{\Omega}}
+
+%%% trivial fonts for lower Greeks by default
+\ifdefined\changdefsnoupgreek
+\newcommand{\bfalpha}{\mathbf{\alpha}}
+\newcommand{\bfbeta}{\mathbf{\beta}}
+\newcommand{\bfgamma}{\mathbf{\gamma}}
+\newcommand{\bfdelta}{\mathbf{\delta}}
+\newcommand{\bfepsilon}{\mathbf{\epsilon}}
+\newcommand{\bfeps}{\mathbf{\epsilon}}
+\newcommand{\bfvarepsilon}{\mathbf{\varepsilon}}
+\newcommand{\bfveps}{\mathbf{\varepsilon}}
+\newcommand{\bfzeta}{\mathbf{\zeta}}
+\newcommand{\bfeta}{\mathbf{\eta}}
+\newcommand{\bftheta}{\mathbf{\theta}}
+\newcommand{\bfvartheta}{\mathbf{\vartheta}}
+\newcommand{\bfiota}{\mathbf{\iota}}
+\newcommand{\bfkappa}{\mathbf{\kappa}}
+\newcommand{\bflambda}{\mathbf{\lambda}}
+\newcommand{\bfmu}{\mathbf{\mu}}
+\newcommand{\bfnu}{\mathbf{\nu}}
+\newcommand{\bfxi}{\mathbf{\xi}}
+\newcommand{\bfpi}{\mathbf{\pi}}
+\newcommand{\bfvarpi}{\mathbf{\varpi}}
+\newcommand{\bfrho}{\mathbf{\rho}}
+\newcommand{\bfvarrho}{\mathbf{\varrho}}
+\newcommand{\bfsigma}{\mathbf{\sigma}}
+\newcommand{\bfvarsigma}{\mathbf{\varsigma}}
+\newcommand{\bftau}{\mathbf{\tau}}
+\newcommand{\bfupsilon}{\mathbf{\upsilon}}
+\newcommand{\bfphi}{\mathbf{\phi}}
+\newcommand{\bfvarphi}{\mathbf{\varphi}}
+\newcommand{\bfchi}{\mathbf{\chi}}
+\newcommand{\bfpsi}{\mathbf{\psi}}
+\newcommand{\bfomega}{\mathbf{\omega}}
+\else
+\RequirePackage{bm}
+\RequirePackage{upgreek}
+\newcommand{\bfalpha}{\bm{\upalpha}}
+\newcommand{\bfbeta}{\bm{\upbeta}}
+\newcommand{\bfgamma}{\bm{\upgamma}}
+\newcommand{\bfdelta}{\bm{\updelta}}
+\newcommand{\bfepsilon}{\bm{\upepsilon}}
+\newcommand{\bfeps}{\bm{\upepsilon}}
+\newcommand{\bfvarepsilon}{\bm{\upvarepsilon}}
+\newcommand{\bfveps}{\bm{\upvarepsilon}}
+\newcommand{\bfzeta}{\bm{\upzeta}}
+\newcommand{\bfeta}{\bm{\upeta}}
+\newcommand{\bftheta}{\bm{\uptheta}}
+\newcommand{\bfvartheta}{\bm{\upvartheta}}
+\newcommand{\bfiota}{\bm{\upiota}}
+\newcommand{\bfkappa}{\bm{\upkappa}}
+\newcommand{\bflambda}{\bm{\uplambda}}
+\newcommand{\bfmu}{\bm{\upmu}}
+\newcommand{\bfnu}{\bm{\upnu}}
+\newcommand{\bfxi}{\bm{\upxi}}
+\newcommand{\bfpi}{\bm{\uppi}}
+\newcommand{\bfvarpi}{\bm{\upvarpi}}
+\newcommand{\bfrho}{\bm{\uprho}}
+\newcommand{\bfvarrho}{\bm{\upvarrho}}
+\newcommand{\bfsigma}{\bm{\upsigma}}
+\newcommand{\bfvarsigma}{\bm{\upvarsigma}}
+\newcommand{\bftau}{\bm{\uptau}}
+\newcommand{\bfupsilon}{\bm{\upupsilon}}
+\newcommand{\bfphi}{\bm{\upphi}}
+\newcommand{\bfvarphi}{\bm{\upvarphi}}
+\newcommand{\bfchi}{\bm{\upchi}}
+\newcommand{\bfpsi}{\bm{\uppsi}}
+\newcommand{\bfomega}{\bm{\upomega}}
+\fi
 
 %%% trivial fonts for partial/nabla
 
@@ -2061,13 +2210,18 @@
 
 
 % Common Symbols
-\RequirePackage{xspace}
 \newcommand{\ud}{\mathrm{d}} % for differentiation
 %\newcommand{\dd}{\mathop{}\,\mathrm{d}} % for integral
 \newcommand{\dd}{\,\mathrm{d}} % for integral
+\newcommand{\ue}{\mathrm{e}}
+\newcommand{\ui}{\mathrm{i}}
+\newcommand{\uj}{\mathrm{j}}
+\newcommand{\uk}{\mathrm{k}}
 \newcommand{\trs}{^{\top}}
 %\newcommand{\trs}{^{\mathrm{T}}}
 \newcommand{\asn}{\leftarrow}
+
+\RequirePackage{xspace}
 \newcommand{\const}{\mathrm{const}}
 \newcommand{\st}{\text{~s.t.~}}
 \newcommand{\etal}{\emph{et~al.}\xspace}
