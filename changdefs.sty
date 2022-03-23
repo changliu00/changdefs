@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{changdefs}[2022/03/23, v2.0. Chang Liu's own macros. <liuchangsmail@gmail.com>]
+\ProvidesPackage{changdefs}[2022/03/23, v3.0. Chang Liu's own macros. <liuchangsmail@gmail.com>]
 
 \RequirePackage{amsmath, amsfonts, amssymb}
 
@@ -1016,8 +1016,10 @@
 
 % sans-serif italic (from ICLR template 'math_commands.tex')
 \ifdefined\changdefsnomathsfit\else
+\ifdefined\mathsfit\else
 \DeclareMathAlphabet{\mathsfit}{\encodingdefault}{\sfdefault}{m}{sl}
 \SetMathAlphabet{\mathsfit}{bold}{\encodingdefault}{\sfdefault}{bx}{n}
+\fi
 \newcommand{\sfiA}{\mathsfit{A}}
 \newcommand{\sfiB}{\mathsfit{B}}
 \newcommand{\sfiC}{\mathsfit{C}}
@@ -1086,73 +1088,73 @@
 \newcommand{\sfinin}{\mathsfit{9}}
 
 % sans-serif italic, bm
-% $\bm{\mathsfit{A}}$ produce the same thing as $\bm{\mathsf{A}}$.
-%\newcommand{\sfbiA}{\bm{\mathsfit{A}}}
-%\newcommand{\sfbiB}{\bm{\mathsfit{B}}}
-%\newcommand{\sfbiC}{\bm{\mathsfit{C}}}
-%\newcommand{\sfbiD}{\bm{\mathsfit{D}}}
-%\newcommand{\sfbiE}{\bm{\mathsfit{E}}}
-%\newcommand{\sfbiF}{\bm{\mathsfit{F}}}
-%\newcommand{\sfbiG}{\bm{\mathsfit{G}}}
-%\newcommand{\sfbiH}{\bm{\mathsfit{H}}}
-%\newcommand{\sfbiI}{\bm{\mathsfit{I}}}
-%\newcommand{\sfbiJ}{\bm{\mathsfit{J}}}
-%\newcommand{\sfbiK}{\bm{\mathsfit{K}}}
-%\newcommand{\sfbiL}{\bm{\mathsfit{L}}}
-%\newcommand{\sfbiM}{\bm{\mathsfit{M}}}
-%\newcommand{\sfbiN}{\bm{\mathsfit{N}}}
-%\newcommand{\sfbiO}{\bm{\mathsfit{O}}}
-%\newcommand{\sfbiP}{\bm{\mathsfit{P}}}
-%\newcommand{\sfbiQ}{\bm{\mathsfit{Q}}}
-%\newcommand{\sfbiR}{\bm{\mathsfit{R}}}
-%\newcommand{\sfbiS}{\bm{\mathsfit{S}}}
-%\newcommand{\sfbiT}{\bm{\mathsfit{T}}}
-%\newcommand{\sfbiU}{\bm{\mathsfit{U}}}
-%\newcommand{\sfbiV}{\bm{\mathsfit{V}}}
-%\newcommand{\sfbiW}{\bm{\mathsfit{W}}}
-%\newcommand{\sfbiX}{\bm{\mathsfit{X}}}
-%\newcommand{\sfbiY}{\bm{\mathsfit{Y}}}
-%\newcommand{\sfbiZ}{\bm{\mathsfit{Z}}}
-%
-%\newcommand{\sfbiaa}{\bm{\mathsfit{a}}}
-%\newcommand{\sfbibb}{\bm{\mathsfit{b}}}
-%\newcommand{\sfbicc}{\bm{\mathsfit{c}}}
-%\newcommand{\sfbidd}{\bm{\mathsfit{d}}}
-%\newcommand{\sfbiee}{\bm{\mathsfit{e}}}
-%\newcommand{\sfbiff}{\bm{\mathsfit{f}}}
-%\newcommand{\sfbigg}{\bm{\mathsfit{g}}}
-%\newcommand{\sfbihh}{\bm{\mathsfit{h}}}
-%\newcommand{\sfbiii}{\bm{\mathsfit{i}}}
-%\newcommand{\sfbijj}{\bm{\mathsfit{j}}}
-%\newcommand{\sfbikk}{\bm{\mathsfit{k}}}
-%\newcommand{\sfbill}{\bm{\mathsfit{l}}}
-%\newcommand{\sfbimm}{\bm{\mathsfit{m}}}
-%\newcommand{\sfbinn}{\bm{\mathsfit{n}}}
-%\newcommand{\sfbioo}{\bm{\mathsfit{o}}}
-%\newcommand{\sfbipp}{\bm{\mathsfit{p}}}
-%\newcommand{\sfbiqq}{\bm{\mathsfit{q}}}
-%\newcommand{\sfbirr}{\bm{\mathsfit{r}}}
-%\newcommand{\sfbiss}{\bm{\mathsfit{s}}}
-%\newcommand{\sfbitt}{\bm{\mathsfit{t}}}
-%\newcommand{\sfbiuu}{\bm{\mathsfit{u}}}
-%\newcommand{\sfbivv}{\bm{\mathsfit{v}}}
-%\newcommand{\sfbiww}{\bm{\mathsfit{w}}}
-%\newcommand{\sfbixx}{\bm{\mathsfit{x}}}
-%\newcommand{\sfbiyy}{\bm{\mathsfit{y}}}
-%\newcommand{\sfbizz}{\bm{\mathsfit{z}}}
-%
-%%%% trivial fonts for lower Greeks and partial/nabla; no valid fonts for capital Greeks
-%
-%\newcommand{\sfbizro}{\bm{\mathsfit{0}}}
-%\newcommand{\sfbione}{\bm{\mathsfit{1}}}
-%\newcommand{\sfbitwo}{\bm{\mathsfit{2}}}
-%\newcommand{\sfbithr}{\bm{\mathsfit{3}}}
-%\newcommand{\sfbifor}{\bm{\mathsfit{4}}}
-%\newcommand{\sfbifiv}{\bm{\mathsfit{5}}}
-%\newcommand{\sfbisix}{\bm{\mathsfit{6}}}
-%\newcommand{\sfbisev}{\bm{\mathsfit{7}}}
-%\newcommand{\sfbieit}{\bm{\mathsfit{8}}}
-%\newcommand{\sfbinin}{\bm{\mathsfit{9}}}
+% For the default ICLR mathsfit, $\bm{\mathsfit{A}}$ produces the same thing as $\bm{\mathsf{A}}$. Different if using \usepackage[OMLmathsfit]{isomath}.
+\newcommand{\sfbiA}{\bm{\mathsfit{A}}}
+\newcommand{\sfbiB}{\bm{\mathsfit{B}}}
+\newcommand{\sfbiC}{\bm{\mathsfit{C}}}
+\newcommand{\sfbiD}{\bm{\mathsfit{D}}}
+\newcommand{\sfbiE}{\bm{\mathsfit{E}}}
+\newcommand{\sfbiF}{\bm{\mathsfit{F}}}
+\newcommand{\sfbiG}{\bm{\mathsfit{G}}}
+\newcommand{\sfbiH}{\bm{\mathsfit{H}}}
+\newcommand{\sfbiI}{\bm{\mathsfit{I}}}
+\newcommand{\sfbiJ}{\bm{\mathsfit{J}}}
+\newcommand{\sfbiK}{\bm{\mathsfit{K}}}
+\newcommand{\sfbiL}{\bm{\mathsfit{L}}}
+\newcommand{\sfbiM}{\bm{\mathsfit{M}}}
+\newcommand{\sfbiN}{\bm{\mathsfit{N}}}
+\newcommand{\sfbiO}{\bm{\mathsfit{O}}}
+\newcommand{\sfbiP}{\bm{\mathsfit{P}}}
+\newcommand{\sfbiQ}{\bm{\mathsfit{Q}}}
+\newcommand{\sfbiR}{\bm{\mathsfit{R}}}
+\newcommand{\sfbiS}{\bm{\mathsfit{S}}}
+\newcommand{\sfbiT}{\bm{\mathsfit{T}}}
+\newcommand{\sfbiU}{\bm{\mathsfit{U}}}
+\newcommand{\sfbiV}{\bm{\mathsfit{V}}}
+\newcommand{\sfbiW}{\bm{\mathsfit{W}}}
+\newcommand{\sfbiX}{\bm{\mathsfit{X}}}
+\newcommand{\sfbiY}{\bm{\mathsfit{Y}}}
+\newcommand{\sfbiZ}{\bm{\mathsfit{Z}}}
+
+\newcommand{\sfbiaa}{\bm{\mathsfit{a}}}
+\newcommand{\sfbibb}{\bm{\mathsfit{b}}}
+\newcommand{\sfbicc}{\bm{\mathsfit{c}}}
+\newcommand{\sfbidd}{\bm{\mathsfit{d}}}
+\newcommand{\sfbiee}{\bm{\mathsfit{e}}}
+\newcommand{\sfbiff}{\bm{\mathsfit{f}}}
+\newcommand{\sfbigg}{\bm{\mathsfit{g}}}
+\newcommand{\sfbihh}{\bm{\mathsfit{h}}}
+\newcommand{\sfbiii}{\bm{\mathsfit{i}}}
+\newcommand{\sfbijj}{\bm{\mathsfit{j}}}
+\newcommand{\sfbikk}{\bm{\mathsfit{k}}}
+\newcommand{\sfbill}{\bm{\mathsfit{l}}}
+\newcommand{\sfbimm}{\bm{\mathsfit{m}}}
+\newcommand{\sfbinn}{\bm{\mathsfit{n}}}
+\newcommand{\sfbioo}{\bm{\mathsfit{o}}}
+\newcommand{\sfbipp}{\bm{\mathsfit{p}}}
+\newcommand{\sfbiqq}{\bm{\mathsfit{q}}}
+\newcommand{\sfbirr}{\bm{\mathsfit{r}}}
+\newcommand{\sfbiss}{\bm{\mathsfit{s}}}
+\newcommand{\sfbitt}{\bm{\mathsfit{t}}}
+\newcommand{\sfbiuu}{\bm{\mathsfit{u}}}
+\newcommand{\sfbivv}{\bm{\mathsfit{v}}}
+\newcommand{\sfbiww}{\bm{\mathsfit{w}}}
+\newcommand{\sfbixx}{\bm{\mathsfit{x}}}
+\newcommand{\sfbiyy}{\bm{\mathsfit{y}}}
+\newcommand{\sfbizz}{\bm{\mathsfit{z}}}
+
+%%% trivial fonts for lower Greeks and partial/nabla; no valid fonts for capital Greeks
+
+\newcommand{\sfbizro}{\bm{\mathsfit{0}}}
+\newcommand{\sfbione}{\bm{\mathsfit{1}}}
+\newcommand{\sfbitwo}{\bm{\mathsfit{2}}}
+\newcommand{\sfbithr}{\bm{\mathsfit{3}}}
+\newcommand{\sfbifor}{\bm{\mathsfit{4}}}
+\newcommand{\sfbifiv}{\bm{\mathsfit{5}}}
+\newcommand{\sfbisix}{\bm{\mathsfit{6}}}
+\newcommand{\sfbisev}{\bm{\mathsfit{7}}}
+\newcommand{\sfbieit}{\bm{\mathsfit{8}}}
+\newcommand{\sfbinin}{\bm{\mathsfit{9}}}
 \fi
 
 
@@ -2213,10 +2215,9 @@
 \newcommand{\ud}{\mathrm{d}} % for differentiation
 %\newcommand{\dd}{\mathop{}\,\mathrm{d}} % for integral
 \newcommand{\dd}{\,\mathrm{d}} % for integral
-\newcommand{\ue}{\mathrm{e}}
-\newcommand{\ui}{\mathrm{i}}
-\newcommand{\uj}{\mathrm{j}}
-\newcommand{\uk}{\mathrm{k}}
+\newcommand{\ue}{\mathrm{e}} % base of exponential
+\newcommand{\ui}{\mathrm{i}} % imaginary number unit
+\newcommand{\ii}{\mathrm{i}\,} % imaginary number unit
 \newcommand{\trs}{^{\top}}
 %\newcommand{\trs}{^{\mathrm{T}}}
 \newcommand{\asn}{\leftarrow}
