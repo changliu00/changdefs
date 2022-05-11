@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{changdefs}[2022/03/23, v3.0. Chang Liu's own macros. <liuchangsmail@gmail.com>]
+\ProvidesPackage{changdefs}[2022/05/10, v3.0. Chang Liu's own macros. <liuchangsmail@gmail.com>]
 
 \RequirePackage{amsmath, amsfonts, amssymb}
 
@@ -44,8 +44,8 @@
 \ifdefined\changdefshyperref\else\gdef\changdefshyperref{1}\fi
 
 % fonts
-% \renewcommand{\rmdefault}{ptm}
-% \renewcommand{\sfdefault}{phv}
+\renewcommand{\rmdefault}{ptm}
+\renewcommand{\sfdefault}{phv}
 
 % set page geometry
 \RequirePackage[verbose=true,letterpaper]{geometry}
@@ -464,10 +464,66 @@
 \newcommand{\bbY}{\mathbb{Y}}
 \newcommand{\bbZ}{\mathbb{Z}}
 
-%%% no valid fonts for lower Latins, except for k
-\newcommand{\bbk}{\mathbb{k}}
-
+%%% no valid fonts for lower Latins
 %%% trivial fonts for lower Greeks; no valid fonts for capital Greeks and numbers
+
+\RequirePackage[bbgreekl]{mathbbol} % When loaded with this option, Greek letters and more are available (`\bbalpha`, `\Lbrack`, `\Rbrack` directly available). Also use `\mathbb` command. Changes fonts of capital Latins.
+\DeclareSymbolFontAlphabet{\mathbb}{AMSb}
+\DeclareSymbolFontAlphabet{\mathbbl}{bbold} % Use both lines to reserve the original bb for capital Latins.
+% \RequirePackage{bbold} % Also use `\mathbb` command. Changes fonts of capital Latins.
+% \RequirePackage{bbm}
+\newcommand{\bbaa}{\mathbbl{a}}
+\newcommand{\bbbb}{\mathbbl{b}}
+\newcommand{\bbcc}{\mathbbl{c}}
+\newcommand{\bbdd}{\mathbbl{d}}
+\newcommand{\bbee}{\mathbbl{e}}
+\newcommand{\bbff}{\mathbbl{f}}
+\newcommand{\bbgg}{\mathbbl{g}}
+\newcommand{\bbhh}{\mathbbl{h}}
+\newcommand{\bbii}{\mathbbl{i}}
+\newcommand{\bbjj}{\mathbbl{j}}
+\newcommand{\bbkk}{\mathbbl{k}}
+\newcommand{\bbll}{\mathbbl{l}}
+\newcommand{\bbmm}{\mathbbl{m}}
+\newcommand{\bbnn}{\mathbbl{n}}
+\newcommand{\bboo}{\mathbbl{o}}
+\newcommand{\bbpp}{\mathbbl{p}}
+\newcommand{\bbqq}{\mathbbl{q}}
+\newcommand{\bbrr}{\mathbbl{r}}
+\newcommand{\bbss}{\mathbbl{s}}
+\newcommand{\bbtt}{\mathbbl{t}}
+\newcommand{\bbuu}{\mathbbl{u}}
+\newcommand{\bbvv}{\mathbbl{v}}
+\newcommand{\bbww}{\mathbbl{w}}
+\newcommand{\bbxx}{\mathbbl{x}}
+\newcommand{\bbyy}{\mathbbl{y}}
+\newcommand{\bbzz}{\mathbbl{z}}
+
+\newcommand{\bbGamma}{\mathbbl{\Gamma}}
+\newcommand{\bbDelta}{\mathbbl{\Delta}}
+\newcommand{\bbTheta}{\mathbbl{\Theta}}
+\newcommand{\bbLambda}{\mathbbl{\Lambda}}
+\newcommand{\bbXi}{\mathbbl{\Xi}}
+\newcommand{\bbPi}{\mathbbl{\Pi}}
+\newcommand{\bbSigma}{\mathbbl{\Sigma}}
+\newcommand{\bbUpsilon}{\mathbbl{\Upsilon}}
+\newcommand{\bbPhi}{\mathbbl{\Phi}}
+\newcommand{\bbPsi}{\mathbbl{\Psi}}
+\newcommand{\bbOmega}{\mathbbl{\Omega}}
+
+%%% Lower Greek: only available using `mathbbol` with option `bbgreekl`, in which case `\bbalpha` etc. are already defined, and are different from `\mathbb{\alpha}` etc.
+
+%%% Numbers: `bbm` only has `1` and `2`.
+\newcommand{\bbzro}{\mathbbl{0}}
+\newcommand{\bbone}{\mathbbl{1}}
+\newcommand{\bbtwo}{\mathbbl{2}}
+\newcommand{\bbthr}{\mathbbl{3}}
+\newcommand{\bbfor}{\mathbbl{4}}
+\newcommand{\bbfiv}{\mathbbl{5}}
+\newcommand{\bbsix}{\mathbbl{6}}
+\newcommand{\bbsev}{\mathbbl{7}}
+\newcommand{\bbeit}{\mathbbl{8}}
+\newcommand{\bbnin}{\mathbbl{9}}
 \fi
 
 %% math fraktur (mathfrak)
@@ -1957,6 +2013,8 @@
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Diag}{Diag}
 \DeclareMathOperator{\Exp}{Exp}
 \DeclareMathOperator{\expm}{expm}
 \DeclareMathOperator{\grad}{grad}
@@ -2055,6 +2113,14 @@
 \def\obraket{\@ifstar{\origobraket}{\origobraket*}}
 \fi
 
+% \RequirePackage{stmaryrd}
+% \DeclarePairedDelimiter\lrbbrack{\llbracket}{\rrbracket}
+% \let\origlrbbrack\lrbbrack
+% \def\lrbbrack{\@ifstar{\origlrbbrack}{\origlrbbrack*}}
+% \DeclarePairedDelimiter\lrbag{\lbag}{\rbag}
+% \DeclarePairedDelimiter\lrBag{\lBag}{\rBag}
+%%% Use `\mathbbol` with option `[bbgreekl]`.
+\DeclarePairedDelimiter\lrbbrack{\Lbrack}{\Rbrack}
 
 % Special decorators
 \ifdefined\changdefsnodecorators\else
@@ -2123,7 +2189,7 @@
 
 \ifdefined\changdefschang
   \RequirePackage{color}
-  \newcommand{\chang}[1]{{\color{blue}{[\bf\sf Chang: #1]}}}
+  \newcommand{\chang}[1]{{\color{blue}{\textsf{[Chang: #1]}}}}
 \fi
 \ifdefined\changdefshyperref
   \RequirePackage[
@@ -2144,11 +2210,6 @@
 \ifdefined\changdefsnoautonum\else
   \RequirePackage{autonum} % Use package ``autonum'' (after ``hyperref'' and ``cleveref'' if needed) to display Eq. numbers only for in-text-referred equations. ``align*'' ``equation*'' environments disabled.
 \fi
-\ifdefined\changdefsnoeqref\else
-  \RequirePackage{letltxmacro}
-  \LetLtxMacro{\origeqref}{\eqref}
-  \renewcommand{\eqref}{Eq.~\origeqref} % Redefine \eqref so that it automatically prints ``Eq.~''.
-\fi
 \ifdefined\changdefsnolege\else
   \protected\def\le{\leqslant}
   \protected\def\ge{\geqslant}
@@ -2157,6 +2218,119 @@
   \everymath{\displaystyle} % Put in preamble to force all math envs. to use display style.
 \fi
 
+\newcommand{\eqnref}[1]{Eq.~\eqref{eqn:#1}}
+\newcommand{\secref}[1]{Sec.~(\ref{sec:#1})}
+\newcommand{\chapref}[1]{Chap.~(\ref{chap:#1})}
+\newcommand{\figref}[1]{Fig.~(\ref{fig:#1})}
+\newcommand{\tabref}[1]{Table~(\ref{tab:#1})}
+\newcommand{\ftnref}[1]{Footnote~(\ref{ftn:#1})}
+\newcommand{\thmref}[1]{Thm.~(\ref{thm:#1})}
+\newcommand{\propref}[1]{Prop.~(\ref{prop:#1})}
+\newcommand{\lemref}[1]{Lem.~(\ref{lem:#1})}
+\newcommand{\corref}[1]{Cor.~(\ref{cor:#1})}
+\newcommand{\assmref}[1]{Assm.~(\ref{assm:#1})}
+\newcommand{\defref}[1]{Def.~(\ref{def:#1})}
+\newcommand{\algref}[1]{Alg.~(\ref{alg:#1})}
+\makeatletter
+\newcommand{\eqnsref}[1]{%
+  \def\nextitem{\def\nextitem{, }}% deferred `\def`
+  Eqs.~(%
+    \@for \el:=#1\do{%
+      \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{eqn:\el}}\x%
+    }%
+  )
+}
+\makeatother
+\makeatletter
+\newcommand{\figsref}[1]{%
+  \def\nextitem{\def\nextitem{, }}% deferred `\def`
+  Figs.~(%
+    \@for \el:=#1\do{%
+      \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{fig:\el}}\x%
+    }%
+  )
+}
+\makeatother
+\makeatletter
+\newcommand{\tabsref}[1]{%
+  \def\nextitem{\def\nextitem{, }}% deferred `\def`
+  Tables~(%
+    \@for \el:=#1\do{%
+      \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{tab:\el}}\x%
+    }%
+  )
+}
+\makeatother
+\makeatletter
+\newcommand{\thmsref}[1]{%
+  \def\nextitem{\def\nextitem{, }}% deferred `\def`
+  Thms.~(%
+    \@for \el:=#1\do{%
+      \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{thm:\el}}\x%
+    }%
+  )
+}
+\makeatother
+\makeatletter
+\newcommand{\propsref}[1]{%
+  \def\nextitem{\def\nextitem{, }}% deferred `\def`
+  Props.~(%
+    \@for \el:=#1\do{%
+      \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{prop:\el}}\x%
+    }%
+  )
+}
+\makeatother
+\makeatletter
+\newcommand{\lemsref}[1]{%
+  \def\nextitem{\def\nextitem{, }}% deferred `\def`
+  Lems.~(%
+    \@for \el:=#1\do{%
+      \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{lem:\el}}\x%
+    }%
+  )
+}
+\makeatother
+\makeatletter
+\newcommand{\corsref}[1]{%
+  \def\nextitem{\def\nextitem{, }}% deferred `\def`
+  Cors.~(%
+    \@for \el:=#1\do{%
+      \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{cor:\el}}\x%
+    }%
+  )
+}
+\makeatother
+\makeatletter
+\newcommand{\defsref}[1]{%
+  \def\nextitem{\def\nextitem{, }}% deferred `\def`
+  Defs.~(%
+    \@for \el:=#1\do{%
+      \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{def:\el}}\x%
+    }%
+  )
+}
+\makeatother
+\makeatletter
+\newcommand{\assmsref}[1]{%
+  \def\nextitem{\def\nextitem{, }}% deferred `\def`
+  Assms.~(%
+    \@for \el:=#1\do{%
+      \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{assm:\el}}\x%
+    }%
+  )
+}
+\makeatother
+\makeatletter
+\newcommand{\algsref}[1]{%
+  \def\nextitem{\def\nextitem{, }}% deferred `\def`
+  Algs.~(%
+    \@for \el:=#1\do{%
+      \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{alg:\el}}\x%
+    }%
+  )
+}
+\makeatother
 
 % Commands with Arguments
 \newcommand{\tabincell}[2]{\begin{tabular}{@{} #1 @{}} #2 \end{tabular}}
@@ -2180,16 +2354,16 @@
 }
 \newcommand{\fracdelta}[3][]{%
   \def\temp{#1} \ifx\temp\empty
-  \frac{\delta #2}{\delta #3}
+  \frac{\rmdelta #2}{\rmdelta #3}
   \else
-  \frac{\delta^{#1} #2}{{\delta #3}^{#1}}
+  \frac{\rmdelta^{#1} #2}{{\rmdelta #3}^{#1}}
   \fi
 }
 \newcommand{\fracDelta}[3][]{%
   \def\temp{#1} \ifx\temp\empty
-  \frac{\Delta #2}{\Delta #3}
+  \frac{\rmDelta #2}{\rmDelta #3}
   \else
-  \frac{\Delta^{#1} #2}{{\Delta #3}^{#1}}
+  \frac{\rmDelta^{#1} #2}{{\rmDelta #3}^{#1}}
   \fi
 }
 
@@ -2256,11 +2430,18 @@
 % 13. `` A &= \left(\int_t f(x) \mathrm d x \right. \\
 %     `` &\qquad \left.\vphantom{\int_t} g(x) \mathrm d x \right) '': an alternative to manually adjusting parentheses size. ``\vphantom'' informs the ``\left.''-``\right)'' pair of proper height.
 %     `` \left( ... \middle| ... \right) '': ``\middle|'' available.
+% 14. The column alignment in ``align'' is ``rlrlrl...'', where the last ``r'' flushes right. So you may need ``&&'' accordingly.
+%     For ``flalign'', it is ``lrlrlr...'', where the fisrt ``l'' flushes left.
+%     So ``\begin{flalign} \text{(Description)} && equation = 0 && \label{eqn:xx} \end{flalign}'' puts ``(Description)'' to the left and the equation in the middle of the page.
+% 15. ``\tag{words}'' displays ``(words)'' in place of the number of the equation. ``\tag*{}'' does not add parenthesis. (amsmath)
+%     The ``(words)'' is displayed even when ``autonum'' is active.
+%     The best way to use ``(words)'' as a ref is ``\refeq{eqn:xx}'' (mathtools; redefined as ``\origrefeq'') (use the same font as displayed in equation, ignore the ref'ing env).
+% 16. When using ``autonum'', ``align*'' envs are deleted. Use ``align+'' envs to enforce numbering (whether or not ref'ed). Do not use ``eqnarray'' env.
 %
 %% The Column Specification of the Tabular Env.
 % 1. ``@{content}'': acts as a column separator that inserts the content between the adjacent columns. It also kills inter-column space. E.g., ``{r@{.}l}''
 % 2. ``\usepackage{array}'' to allow ``>{pre-content}c<{post-content}'', which inserts pre-content before and post-content after the content in the column. E.g., ``{>{$}c<{$}}'', ``{>{\textbf\bgroup}c<{\egroup}}''.
-% 3. Column specifier ``p{width}'': makes a column of a text block with the specified width. Auto-wrapping and manual line break are allowed. With ``\usepackage{array}'', ``m'' (vertically middle), ``b'' (vert. bottom) are available.
+% 3. Column specifier ``p{width}'': makes a column of a text block with the specified width. Auto-wrapping and manual line break (using ``\newline'') are allowed. With ``\usepackage{array}'', ``m'' (vertically middle), ``b'' (vert. bottom) are available.
 %    For auto-wrapping, alternatively, ``\parbox[t/c/b]{width}{content1 \\ content2}''.
 % 4. ``{*{num_cols}{l/c/r}}''
 % 5. ``\multicolumn{num_cols}{l/c/r/p}{contents}''
