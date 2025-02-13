@@ -2219,18 +2219,20 @@
 \fi
 
 \newcommand{\eqnref}[1]{Eq.~\eqref{eqn:#1}}
-\newcommand{\secref}[1]{Sec.~(\ref{sec:#1})}
-\newcommand{\chapref}[1]{Chap.~(\ref{chap:#1})}
-\newcommand{\figref}[1]{Fig.~(\ref{fig:#1})}
-\newcommand{\tabref}[1]{Table~(\ref{tab:#1})}
-\newcommand{\ftnref}[1]{Footnote~(\ref{ftn:#1})}
-\newcommand{\thmref}[1]{Thm.~(\ref{thm:#1})}
-\newcommand{\propref}[1]{Prop.~(\ref{prop:#1})}
-\newcommand{\lemref}[1]{Lem.~(\ref{lem:#1})}
-\newcommand{\corref}[1]{Cor.~(\ref{cor:#1})}
-\newcommand{\assmref}[1]{Assm.~(\ref{assm:#1})}
-\newcommand{\defref}[1]{Def.~(\ref{def:#1})}
-\newcommand{\algref}[1]{Alg.~(\ref{alg:#1})}
+\newcommand{\secref}[1]{Sec.~\ref{sec:#1}}
+\newcommand{\appxref}[1]{Appx.~\ref{appx:#1}}
+\newcommand{\suppref}[1]{Supplementary~\ref{supp:#1}}
+\newcommand{\chapref}[1]{Chap.~\ref{chap:#1}}
+\newcommand{\figref}[1]{Fig.~\ref{fig:#1}}
+\newcommand{\tabref}[1]{Table~\ref{tab:#1}}
+\newcommand{\ftnref}[1]{Footnote~\ref{ftn:#1}}
+\newcommand{\thmref}[1]{Thm.~\ref{thm:#1}}
+\newcommand{\propref}[1]{Prop.~\ref{prop:#1}}
+\newcommand{\lemref}[1]{Lem.~\ref{lem:#1}}
+\newcommand{\corref}[1]{Cor.~\ref{cor:#1}}
+\newcommand{\assmref}[1]{Assm.~\ref{assm:#1}}
+\newcommand{\defref}[1]{Def.~\ref{def:#1}}
+\newcommand{\algref}[1]{Alg.~\ref{alg:#1}}
 \makeatletter
 \newcommand{\eqnsref}[1]{%
   \def\nextitem{\def\nextitem{, }}% deferred `\def`
@@ -2244,91 +2246,82 @@
 \makeatletter
 \newcommand{\figsref}[1]{%
   \def\nextitem{\def\nextitem{, }}% deferred `\def`
-  Figs.~(%
+  Figs.~%
     \@for \el:=#1\do{%
       \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{fig:\el}}\x%
     }%
-  )
 }
 \makeatother
 \makeatletter
 \newcommand{\tabsref}[1]{%
   \def\nextitem{\def\nextitem{, }}% deferred `\def`
-  Tables~(%
+  Tables~%
     \@for \el:=#1\do{%
       \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{tab:\el}}\x%
     }%
-  )
 }
 \makeatother
 \makeatletter
 \newcommand{\thmsref}[1]{%
   \def\nextitem{\def\nextitem{, }}% deferred `\def`
-  Thms.~(%
+  Thms.~%
     \@for \el:=#1\do{%
       \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{thm:\el}}\x%
     }%
-  )
 }
 \makeatother
 \makeatletter
 \newcommand{\propsref}[1]{%
   \def\nextitem{\def\nextitem{, }}% deferred `\def`
-  Props.~(%
+  Props.~%
     \@for \el:=#1\do{%
       \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{prop:\el}}\x%
     }%
-  )
 }
 \makeatother
 \makeatletter
 \newcommand{\lemsref}[1]{%
   \def\nextitem{\def\nextitem{, }}% deferred `\def`
-  Lems.~(%
+  Lems.~%
     \@for \el:=#1\do{%
       \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{lem:\el}}\x%
     }%
-  )
 }
 \makeatother
 \makeatletter
 \newcommand{\corsref}[1]{%
   \def\nextitem{\def\nextitem{, }}% deferred `\def`
-  Cors.~(%
+  Cors.~%
     \@for \el:=#1\do{%
       \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{cor:\el}}\x%
     }%
-  )
 }
 \makeatother
 \makeatletter
 \newcommand{\defsref}[1]{%
   \def\nextitem{\def\nextitem{, }}% deferred `\def`
-  Defs.~(%
+  Defs.~%
     \@for \el:=#1\do{%
       \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{def:\el}}\x%
     }%
-  )
 }
 \makeatother
 \makeatletter
 \newcommand{\assmsref}[1]{%
   \def\nextitem{\def\nextitem{, }}% deferred `\def`
-  Assms.~(%
+  Assms.~%
     \@for \el:=#1\do{%
       \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{assm:\el}}\x%
     }%
-  )
 }
 \makeatother
 \makeatletter
 \newcommand{\algsref}[1]{%
   \def\nextitem{\def\nextitem{, }}% deferred `\def`
-  Algs.~(%
+  Algs.~%
     \@for \el:=#1\do{%
       \nextitem\begingroup\protected@edef\x{\endgroup\noexpand\ref{alg:\el}}\x%
     }%
-  )
 }
 \makeatother
 
